@@ -1,0 +1,157 @@
+.body{
+  background-color: #909090;
+  font-family: var(--app-font);
+  -webkit-font-smoothing: none;   /* пиксельнее вид в WebKit/Chromium */
+  font-variant-ligatures: none;
+}
+
+.container{
+  position: relative;
+}
+
+:root{
+  --radius: 0.6em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #000000;
+  --app-font: "Press Start 2P", system-ui, Arial, sans-serif;
+}
+
+.score{
+  width: 90%;
+  max-width: 1100px;
+  height: 120px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  border: 0;                         
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr 120px;
+  gap: 18px;                        
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.scoreP1, .P1, .P2, .scoreP2{
+  width: auto;                       
+  height: 120px;
+  background: var(--button_outline_color);
+  border-radius: 2em 2em 2.7em 2.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scoreP1 p, .P1 p, .P2 p, .scoreP2 p{
+  margin: 0;
+  box-sizing: border-box;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  border: 2px solid var(--button_outline_color);
+  border-radius: var(--radius);
+  background: var(--button_color);
+  color: var(--button_outline_color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-0.2em);      
+  border-radius: var(--radius);
+}
+
+.scoreP1 p, .scoreP2 p{ font-size: 50px; }
+.P1 p, .P2 p{ font-size: 50px; }
+
+.btn{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 47%;
+}
+
+.btnChoice{
+  --radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #000000;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius);
+  background: var(--button_outline_color);
+  width: 200px;
+}
+
+.button_top {
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid var(--button_outline_color);
+  border-radius: var(--radius);
+  padding: 0.75em 1.5em;
+  background: var(--button_color);
+  color: var(--button_outline_color);
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+
+.btnChoice:hover{
+  transform: translateY(-0.33em);
+}
+
+.btnChoice:active{
+  transform: translateY(0);
+}
+
+.hands{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 280px;
+}
+
+.paper      { 
+  --base: rotateZ(30deg);
+  transform: var(--base);  
+  width: 450px; 
+}
+.rock       { 
+  --base: rotateY(180deg);
+  transform: var(--base);  
+  width: 400px; 
+}
+.scissors   { 
+  --base: rotateZ(-20deg);
+  transform: var(--base);  
+  width: 430px; 
+}
+.paperMir   { 
+  --base: rotateZ(-30deg) rotateY(180deg);
+  transform: var(--base);  
+  width: 450px; 
+}
+.rockMir    { 
+  --base: rotateZ(0deg);
+  transform: var(--base);  
+  width: 400px; 
+}
+.scissorsMir{ 
+--base: rotateZ(20deg) rotateY(180deg);
+  transform: var(--base);  
+  width: 430px; 
+}
+
+.is-hidden{ display: none}
+
+.hands img{
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+.bump{
+  animation: handBump .40s cubic-bezier(.25,.6,.3,1) both;
+}
+@keyframes handBump{
+  0%   { transform: var(--base) translateY(0); }
+  45%  { transform: var(--base) translateY(-16px); } /* вверх */
+  100% { transform: var(--base) translateY(0); }
+}

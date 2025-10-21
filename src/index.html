@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title> RPS </title>
+    <script src="js/app.js" defer></script>
+    <meta name="description" content="Описание, которое будет при поиске">
+</head>
+<body class="body">
+  <div class="container">
+    <div class="score">
+      <div class="scoreP1"><p id="P1score">0</p></div>
+      <div class="P1"><p class="P1Name">You</p></div>
+      <div class="P2"> <p class="P2Name">Bot</p></div>
+      <div class="scoreP2"><p id="P2score">0</p></div>
+    </div>
+    <div class="btn">
+      <button class="btnChoice js-toggle"  onclick="playGame('Rock')" >
+        <span class="button_top">Rock</span>
+      </button>
+      <button class="btnChoice js-toggle"  onclick="playGame('Paper')">
+        <span class="button_top">Paper</span>
+      </button>
+      <button class="btnChoice js-toggle"  onclick="playGame('Scissors')">
+        <span class="button_top">Scissors</span>
+      </button>
+    </div>
+  </div>
+  <div class="hands">
+    <img src="font/paper.png" alt="" class="paper is-hidden"> 
+    <img src="font/rock.png" alt="" class="rock">
+    <img src="font/scissors.png" alt="" class="scissors is-hidden">
+    <img src="font/paper.png" alt="" class="paperMir is-hidden"> 
+    <img src="font/rock.png" alt="" class="rockMir">
+    <img src="font/scissors.png" alt="" class="scissorsMir is-hidden">
+  </div>
+</body>
+</html>
