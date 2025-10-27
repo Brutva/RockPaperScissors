@@ -15,6 +15,25 @@ let P2score = 0
 /* кто кого бьёт */
 const winner = { Rock: "Scissors", Paper: "Rock", Scissors: "Paper" };
 
+let isAutoPlaying = false;
+let IntervalId;
+
+function autoPlay() {
+    if (!isAutoPlaying) {
+        IntervalId = setInterval(function(){
+            const playerChoice = botPick();
+            playGame(playerChoice)
+        }, 1500);
+        
+        isAutoPlaying = true 
+
+    } else {
+        clearInterval(IntervalId)
+
+        isAutoPlaying = false
+    }
+}
+
 function playGame(playerChoice) {
 
     const botMove = botPick()

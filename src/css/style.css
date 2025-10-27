@@ -67,6 +67,26 @@
   margin-top: 47%;
 }
 
+.btnAuto{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 43.5%;
+}
+
+.btnChoiceAuto{
+  --radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #000000;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius);
+  background: var(--button_outline_color);
+  width: 230px;
+}
+
 .btnChoice{
   --radius: 0.75em;
   --button_color: #e8e8e8;
@@ -97,6 +117,14 @@
 }
 
 .btnChoice:active{
+  transform: translateY(0);
+}
+
+.btnChoiceAuto:hover{
+  transform: translateY(-0.33em);
+}
+
+.btnChoiceAuto:active{
   transform: translateY(0);
 }
 
